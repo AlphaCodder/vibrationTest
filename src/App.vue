@@ -1,15 +1,20 @@
 <template>
-  <div class="column">
-    <template v-if="gamepad">
-      <ControllerActive :magnitude="magnitude" @toggle="toggleGo" :button="button" @update:magnitude="updateMagnitude"/>
-    </template>
-    <template v-else>
-      <NoController />
-    </template>
+  <div class="container d-flex h-100">
+    <div class="row align-self-center w-100">
+      <div class="col-md-6 mx-auto">
+        <template v-if="gamepad">
+          <ControllerActive :magnitude="magnitude" @toggle="toggleGo" :button="button" @update:magnitude="updateMagnitude"/>
+        </template>
+        <template v-else>
+          <NoController />
+        </template>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import 'bootstrap/dist/css/bootstrap.css';
 import ControllerActive from './components/ControllerActive.vue';
 import NoController from './components/NoController.vue';
 
@@ -17,7 +22,7 @@ export default {
   data() {
     return {
       gamepad: null,
-      magnitude: 0,
+      magnitude: this.magnitude,
       go: false,
     };
   },
@@ -62,3 +67,9 @@ export default {
   },
 };
 </script>
+<style>
+body {
+  background-color: #f5f5f5;
+  margin: 0 auto;
+}
+</style>

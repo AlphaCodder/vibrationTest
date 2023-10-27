@@ -4,13 +4,13 @@
     <div class="field">
       <label class="label">Intensity</label>
       <div class="control">
-        <input class="slider" type="range" min="0" max="100" v-model="magnitude" @input="updateMagnitude" />
+        <input class="slider w-100" type="range" min="0" max="100" v-model="magnitude" @input="updateMagnitude" />
       </div>
     </div>
     <div class="field">
       <label class="label">Control</label>
       <div class="control">
-        <button class="button is-primary" type="button" @click="toggle">{{ button }}</button>
+        <button class="button primary" type="button" @click="toggle">{{ button }}</button>
       </div>
     </div>
   </div>
@@ -22,7 +22,7 @@ export default {
   props: ['button'],
   data() {
     return {
-      magnitude: 100,
+      magnitude: 0,
     };
   },
   methods: {
